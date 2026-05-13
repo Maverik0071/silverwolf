@@ -48,6 +48,7 @@ dnf5 install -y zsh
 # dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
+dnf5 -y install hyprland
 dnf5 -y install hyprland-guiutils
 # dnf5 -y install hyprland-protocols
 dnf5 -y install hyprpaper 
@@ -66,13 +67,13 @@ dnf5 -y copr disable avengemedia/danklinux
 #dnf5 -y install matugen
 #dnf5 -y copr disable heus-sueh/hyprland
 
-dnf5 copr enable solopasha/hyprland
+#dnf5 copr enable solopasha/hyprland
 #dnf5 -y install hyprland
-dnf5 -y install hyprpolkit
-dnf5 -y install hyprland
-dnf5 -y install swaylock-effects
-dnf5 -y install xdg-portal-desktop-hyprland
-dnf5 -y copr disable solopasha/hyprland
+#dnf5 -y install hyprpolkit
+#dnf5 -y install hyprland
+#dnf5 -y install swaylock-effects
+#dnf5 -y install xdg-portal-desktop-hyprland
+#dnf5 -y copr disable solopasha/hyprland
 
 #### Example for enabling a System Unit File
 
