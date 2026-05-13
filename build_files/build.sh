@@ -67,7 +67,7 @@ dnf5 -y copr disable avengemedia/danklinux
 #dnf5 -y copr disable heus-sueh/hyprland
 
 dnf5 copr enable solopasha/hyprland
-dnf5 -y install hyprland
+#dnf5 -y install hyprland
 dnf5 -y install hyprpolkit
 dnf5 -y install hyprland
 dnf5 -y install swaylock-effects
