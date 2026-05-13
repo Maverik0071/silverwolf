@@ -52,7 +52,7 @@ dnf5 -y install hyprland-guiutils
 # dnf5 -y install hyprland-protocols
 dnf5 -y install hyprpaper 
 dnf5 -y install nwg-look
-dnf5 -y disable lionheartp/Hyprland
+dnf5 -y copr disable lionheartp/Hyprland
 
 dnf5 -y copr enable avengemedia/danklinux
 dnf5 -y install dms
