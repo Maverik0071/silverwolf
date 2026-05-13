@@ -52,19 +52,19 @@ dnf5 -y install hyprland-guiutils
 # dnf5 -y install hyprland-protocols
 dnf5 -y install hyprpaper 
 dnf5 -y install nwg-look
-dnf5 disable lionheartp/Hyprland
+dnf5 -y disable lionheartp/Hyprland
 
 dnf5 -y copr enable avengemedia/danklinux
 dnf5 -y install dms
 dnf5 -y install dms-greeter
 dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
-dnf5 copr disable avengemedia/danklinux
+dnf5 -y copr disable avengemedia/danklinux
 
 dnf5 copr enable heus-sueh/hyprland
 dnf5 -y install swww
 dnf5 -y install matugen
-dnf5 copr disable heus-sueh/hyprland
+dnf5 -y copr disable heus-sueh/hyprland
 
 dnf5 copr enable solopasha/hyprland
 dnf5 -y install hyprland
@@ -72,7 +72,7 @@ dnf5 -y install hyprpolkit
 dnf5 -y install hyprland
 dnf5 -y install swaylock-effects
 dnf5 -y install xdg-portal-desktop-hyprland
-dnf5 copr disable solopasha/hyprland
+dnf5 -y copr disable solopasha/hyprland
 
 #### Example for enabling a System Unit File
 
