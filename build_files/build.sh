@@ -61,10 +61,10 @@ dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
 dnf5 -y copr disable avengemedia/danklinux
 
-dnf5 copr enable heus-sueh/hyprland
-dnf5 -y install swww
-dnf5 -y install matugen
-dnf5 -y copr disable heus-sueh/hyprland
+#dnf5 copr enable heus-sueh/hyprland
+#dnf5 -y install swww
+#dnf5 -y install matugen
+#dnf5 -y copr disable heus-sueh/hyprland
 
 dnf5 copr enable solopasha/hyprland
 dnf5 -y install hyprland
