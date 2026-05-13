@@ -34,9 +34,9 @@ dnf5 install -y NetworkManager-tui
 dnf5 install -y picom 
 dnf5 install -y quickshell 
 dnf5 install -y rofi 
-dnf5 install -y swww 
+#dnf5 install -y swww 
 dnf5 install -y vim 
-dnf5 install -y waypaper 
+#dnf5 install -y waypaper 
 dnf5 install -y xkill 
 dnf5 install -y zsh
 
