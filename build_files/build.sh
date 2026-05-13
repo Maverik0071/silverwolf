@@ -12,7 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 dnf5 install -y tmux 
 dnf5 install -y alacritty 
-dnf5 install -y brave-origin-nightly 
+# dnf5 install -y brave-origin-nightly 
 dnf5 install -y distrobox 
 dnf5 install -y dmenu 
 dnf5 install -y dunst 
