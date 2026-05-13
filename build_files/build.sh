@@ -49,7 +49,7 @@ dnf5 install -y zsh
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
 dnf5 -y install hyprland-guiutils
-dnf5 -y install hyprland-protocols
+# dnf5 -y install hyprland-protocols
 dnf5 -y install hyprpaper 
 dnf5 -y install nwg-look
 dnf5 disable lionheartp/Hyprland
