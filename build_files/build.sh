@@ -10,7 +10,35 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux alacritty brave-origin-nightly distrobox dmenu dunst fastfetch flameshot fzf gh git grim grimshot  jetbrains-mono-fonts-all jgmenu jgmenu-gtktheme jgmenu-pmenu lm_sensors lsd mako neovim NetworkManager-tui picom quickshell rofi swww vim waypaper xkill zsh
+dnf5 install -y tmux 
+dnf5 install -y alacritty 
+dnf5 install -y brave-origin-nightly 
+dnf5 install -y distrobox 
+dnf5 install -y dmenu 
+dnf5 install -y dunst 
+dnf5 install -y fastfetch 
+dnf5 install -y flameshot 
+dnf5 install -y fzf 
+dnf5 install -y gh 
+dnf5 install -y git 
+dnf5 install -y grim 
+dnf5 install -y grimshot  
+dnf5 install -y jetbrains-mono-fonts-all 
+dnf5 install -y jgmenu 
+dnf5 install -y jgmenu-gtktheme 
+dnf5 install -y jgmenu-pmenu 
+dnf5 install -y lm_sensors 
+dnf5 install -y lsd mako 
+dnf5 install -y neovim 
+dnf5 install -y NetworkManager-tui 
+dnf5 install -y picom 
+dnf5 install -y quickshell 
+dnf5 install -y rofi 
+dnf5 install -y swww 
+dnf5 install -y vim 
+dnf5 install -y waypaper 
+dnf5 install -y xkill 
+dnf5 install -y zsh
 
 # Use a COPR Example:
 #
