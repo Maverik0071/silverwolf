@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/kinoite-main:gts-20260515.1
+FROM ghcr.io/ublue-os/kinoite-main:latest-20260515.2
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
