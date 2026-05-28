@@ -1,0 +1,4 @@
+alacritty brave-origin-nightly distrobox dmenu dms dms-greeter docker dunst fastfetch flameshot fzf gh git grim grimshot
+                           hyprland hyprland-guiutils hyprland-protocols-devel hyprpaper hyprshot jetbrains-mono-fonts-all jgmenu jgmenu-gtktheme
+                           jgmenu-pmenu libdisplay-info-devel libvirt-client-qemu libvirt-daemon-qemu lm_sensors lsd mako neovim NetworkManager-tui
+                           nix-core pavucontrol picom qemu qemu-kvm quickshell rofi swww vim waypaper xkill zsh

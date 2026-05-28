@@ -1,0 +1,30 @@
+# General settings
+[general]
+import = [] # You can import themes here later
+live_config_reload = true
+
+[window]
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+opacity = 0.95
+decorations = "Full"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrains Mono" # Replace with your preferred Nerd Font
+style = "Regular"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+
