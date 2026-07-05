@@ -34,6 +34,7 @@ dnf5 install -y NetworkManager-tui
 dnf5 install -y picom
 dnf5 install -y quickshell
 dnf5 install -y rofi
+dnf5 install -y lightdm
 #dnf5 install -y swww
 dnf5 install -y vim
 #dnf5 install -y waypaper
@@ -78,3 +79,4 @@ dnf5 -y copr disable avengemedia/danklinux
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable lightdm.service
