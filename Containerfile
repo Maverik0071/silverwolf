@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/ublue-os/$SilverBlue:stable-20260804.1
+FROM ghcr.io/ublue-os/akmods:${AKMODS_FLAVOR}-${FEDORA_MAJOR_VERSION}-${KERNEL} AS akmods
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
