@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/akmods:${AKMODS_FLAVOR}-${FEDORA_MAJOR_VERSION}-${KERNEL} AS akmods
+FROM ghcr.io/get-aurora-dev/common:latest
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
