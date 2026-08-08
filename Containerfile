@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/kinoite-main:latest-20260515.2
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/ublue-os/$SilverBlue:stable-20260804.1
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
