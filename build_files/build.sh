@@ -20,7 +20,7 @@ dnf5 install -y fastfetch
 dnf5 install -y flameshot
 dnf5 install -y fzf
 dnf5 install -y gh
-#dnf5 install -y git
+dnf5 install -y git
 dnf5 install -y grim
 dnf5 install -y grimshot
 dnf5 install -y jetbrains-mono-fonts-all
