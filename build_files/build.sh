@@ -35,7 +35,9 @@ dnf5 install -y NetworkManager-tui
 dnf5 install -y picom
 dnf5 install -y quickshell
 dnf5 install -y rofi
-dnf5 install -y lightdm
+dnf5 install -y greetd
+dnf5 install -y docker
+dnf5 install -y cockpit
 #dnf5 install -y swww
 dnf5 install -y vim
 #dnf5 install -y waypaper
@@ -55,14 +57,14 @@ dnf5 -y install hyprland-guiutils
 # dnf5 -y install hyprland-protocols
 dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
-dnf5 -y copr disable lionheartp/Hyprland
+# dnf5 -y copr disable lionheartp/Hyprland
 
-dnf5 -y copr enable avengemedia/danklinux
+# dnf5 -y copr enable avengemedia/danklinux
 dnf5 -y install dms
 dnf5 -y install dms-greeter
 dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
-dnf5 -y copr disable avengemedia/danklinux
+#dnf5 -y copr disable avengemedia/danklinux
 
 #dnf5 copr enable heus-sueh/hyprland
 #dnf5 -y install swww
@@ -71,13 +73,13 @@ dnf5 -y copr disable avengemedia/danklinux
 
 #dnf5 copr enable solopasha/hyprland
 #dnf5 -y install hyprland
-#dnf5 -y install hyprpolkit
-#dnf5 -y install hyprland
-#dnf5 -y install swaylock-effects
-#dnf5 -y install xdg-portal-desktop-hyprland
+dnf5 -y install hyprpolkit
+dnf5 -y install swaylock-effects
+dnf5 -y install xdg-portal-desktop-hyprland
 #dnf5 -y copr disable solopasha/hyprland
 
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-# systemctl enable lightdm.service
+systemctl enable greetd
+systemctl enable cockpit
