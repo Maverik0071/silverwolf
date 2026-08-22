@@ -54,15 +54,15 @@ dnf5 install -y wireshark
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
-curl -fsSL https://raw.githubusercontent.com/terrapkg/packages/f$(rpm --eval '%{fedora}')/anda/terra/release/terra.repo | pkexec tee /etc/yum.repos.d/terra.repo
-rpm-ostree install terra-release terra-gpg-keys
+#curl -fsSL https://raw.githubusercontent.com/terrapkg/packages/f$(rpm --eval '%{fedora}')/anda/terra/release/terra.repo | pkexec tee /etc/yum.repos.d/terra.repo
+#rpm-ostree install terra-release terra-gpg-keys
 
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
 dnf5 -y install hyprland
 dnf5 -y install hyprland-guiutils
 # dnf5 -y install hyprland-protocols
-dnf5 -y install hyprpaper
+#dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
 #dnf5 -y copr disable lionheartp/Hyprland
 
