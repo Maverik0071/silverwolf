@@ -21,8 +21,8 @@ dnf5 install -y flameshot
 dnf5 install -y fzf
 dnf5 install -y gh
 dnf5 install -y git
-dnf5 install -y grim
-dnf5 install -y grimshot
+#dnf5 install -y grim
+#dnf5 install -y grimshot
 dnf5 install -y jetbrains-mono-fonts-all
 dnf5 install -y jgmenu
 dnf5 install -y jgmenu-gtktheme
@@ -40,9 +40,13 @@ dnf5 install -y docker
 dnf5 install -y cockpit
 #dnf5 install -y swww
 dnf5 install -y vim
+dnf5 install -y neovim
+dnf5 install -y zoxide
 #dnf5 install -y waypaper
 dnf5 install -y xkill
 dnf5 install -y zsh
+dnf5 install -y nmap
+dnf5 install -y wireshark
 
 # Use a COPR Example:
 #
@@ -50,6 +54,9 @@ dnf5 install -y zsh
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
+curl -fsSL https://raw.githubusercontent.com/terrapkg/packages/f$(rpm --eval '%{fedora}')/anda/terra/release/terra.repo | pkexec tee /etc/yum.repos.d/terra.repo
+rpm-ostree install terra-release terra-gpg-keys
+
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
 dnf5 -y install hyprland
@@ -57,12 +64,12 @@ dnf5 -y install hyprland-guiutils
 # dnf5 -y install hyprland-protocols
 dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
-# dnf5 -y copr disable lionheartp/Hyprland
+#dnf5 -y copr disable lionheartp/Hyprland
 
 # dnf5 -y copr enable avengemedia/danklinux
-dnf5 -y install dms
-dnf5 -y install dms-greeter
-dnf5 -y install dms dms-greeter
+#dnf5 -y install dms
+#dnf5 -y install dms-greeter
+#dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
 #dnf5 -y copr disable avengemedia/danklinux
 
@@ -73,13 +80,12 @@ dnf5 -y install quickshell
 
 #dnf5 copr enable solopasha/hyprland
 #dnf5 -y install hyprland
-dnf5 -y install hyprpolkit
-dnf5 -y install swaylock-effects
-dnf5 -y install xdg-portal-desktop-hyprland
+#dnf5 -y install hyprpolkit
+#dnf5 -y install swaylock-effects
+#dnf5 -y install xdg-portal-desktop-hyprland
 #dnf5 -y copr disable solopasha/hyprland
 
 #### Example for enabling a System Unit File
-
 systemctl enable podman.socket
-systemctl enable greetd
+# systemctl enable greetd
 systemctl enable cockpit
