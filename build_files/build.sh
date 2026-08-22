@@ -36,7 +36,7 @@ dnf5 install -y picom
 dnf5 install -y quickshell
 dnf5 install -y rofi
 dnf5 install -y greetd
-dnf5 install -y docker
+#dnf5 install -y docker
 dnf5 install -y cockpit
 #dnf5 install -y swww
 dnf5 install -y vim
