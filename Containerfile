@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/maverik0071/silverwolf:latest
+# FROM ghcr.io/maverik0071/silverwolf:latest
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
