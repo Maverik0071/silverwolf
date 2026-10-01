@@ -9,7 +9,7 @@ COPY build_files /
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
 FROM ghcr.io/rakuos/rakuos-gnome:latest# 
-Or your specific desired starting base tag
+# Or your specific desired starting base tag
 
 
 # ... and so on, here are more base images
