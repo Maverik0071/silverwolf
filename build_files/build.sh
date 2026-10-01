@@ -21,7 +21,22 @@ dnf5.real -y install @fonts @hardware-support \
   gnome-shell-extension-dash-to-dock \
   gnome-shell-extension-blur-my-shell \
   rakuos-welcome-gtk \
-  rakuos-software-gtk
+  rakuos-software-gtk \
+  alacritty \
+  vim \
+  neovim \
+  fastfetch \
+  hyprland \
+  dms \
+  wireshark \ 
+  nmap \
+  kitty \
+  firefox \
+  git \
+  curl \
+  wget \
+  github-cli \
+  zsh \
 
 ## Remove packages
 dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
