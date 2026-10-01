@@ -20,8 +20,33 @@ dnf5.real -y install @fonts @hardware-support \
   gnome-shell-extension-no-overview \
   gnome-shell-extension-dash-to-dock \
   gnome-shell-extension-blur-my-shell \
+  gnome-shell-extension-pop-shell \
   rakuos-welcome-gtk \
-  rakuos-software-gtk
+  rakuos-software-gtk \
+  kitty \
+  git \
+  wget \
+  github-cli \
+  flameshot \
+  gh \
+  distrobox \
+  networkmanager-tui \
+  firefox \
+  tor \
+  wireshark-qt \
+  nmap \
+  dms \
+  hyprland \
+  ghidra \
+  dmenu \
+  dunst \
+  podman \
+  lm_sensors \
+  fzf \
+  zoxide \
+  zsh \
+  greetd \
+  
 
 ## Remove packages
 dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
@@ -31,3 +56,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 ## Enable Services
 systemctl enable gdm.service
+systemctl enable podman.socket
+systemctl enable greetd
+systemctl enable cockpit
