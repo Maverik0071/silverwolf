@@ -44,7 +44,7 @@ dnf5.real -y install @fonts @hardware-support \
   zoxide \
   zsh \
   usb-modeswitch --skip-unavailable \
-  greetd \
+  greetd
   
 
 ## Remove packages
