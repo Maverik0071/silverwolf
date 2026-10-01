@@ -33,7 +33,7 @@ dnf5.real -y install @fonts @hardware-support \
   NetworkManager-tui \
   firefox \
   tor \
-  wireshark-qt \
+  wireshark \
   nmap \
   dms \
   hyprland \
