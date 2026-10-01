@@ -88,4 +88,4 @@ dnf5 -y install quickshell
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
 # systemctl enable greetd
-systemctl enable cockpit
+#systemctl enable cockpit
