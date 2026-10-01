@@ -35,8 +35,6 @@ dnf5.real -y install @fonts @hardware-support \
   tor \
   wireshark \
   nmap \
-  dms \
-  hyprland \
   ghidra \
   dmenu \
   dunst \
@@ -45,6 +43,7 @@ dnf5.real -y install @fonts @hardware-support \
   fzf \
   zoxide \
   zsh \
+  usb-modeswitch --skip-unavailable \
   greetd 
   
 
