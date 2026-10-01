@@ -30,7 +30,7 @@ dnf5.real -y install @fonts @hardware-support \
   flameshot \
   gh \
   distrobox \
-  networkmanager-tui \
+  NetworkManager-tui \
   firefox \
   tor \
   wireshark-qt \
@@ -57,5 +57,5 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 ## Enable Services
 systemctl enable gdm.service
 #systemctl enable podman.socket
-systemctl enable greetd
+# systemctl enable greetd
 #systemctl enable cockpit
