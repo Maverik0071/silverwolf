@@ -8,7 +8,7 @@ COPY build_files /
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
-FFROM quay.io/rakuos/rakuos-base:latest
+FROM quay.io/rakuos/rakuos-base:latest
 # Or your specific desired starting base tag
 
 
