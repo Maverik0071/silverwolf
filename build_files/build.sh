@@ -40,7 +40,7 @@ dnf5.real -y install @fonts @hardware-support \
   ghidra \
   dmenu \
   dunst \
-  podman \
+  docker \
   lm_sensors \
   fzf \
   zoxide \
