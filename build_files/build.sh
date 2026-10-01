@@ -177,7 +177,7 @@ dnf5 install -y zsh
 dnf5 install -y nmap
 dnf5 install -y wireshark
 
-nf5 -y copr enable lionheartp/Hyprland
+dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
 dnf5 -y install hyprland
 dnf5 -y install hyprland-guiutils
