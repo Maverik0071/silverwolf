@@ -45,7 +45,7 @@ dnf5.real -y install @fonts @hardware-support \
   fzf \
   zoxide \
   zsh \
-  greetd \
+  greetd 
   
 
 ## Remove packages
