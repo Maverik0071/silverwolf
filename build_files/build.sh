@@ -56,6 +56,3 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 ## Enable Services
 systemctl enable gdm.service
-#systemctl enable podman.socket
-# systemctl enable greetd
-#systemctl enable cockpit
