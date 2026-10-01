@@ -43,8 +43,7 @@ dnf5.real -y install @fonts @hardware-support \
   fzf \
   zoxide \
   zsh \
-  usb-modeswitch --skip-unavailable \
-  greetd
+  usb-modeswitch --skip-unavailable
   
 
 ## Remove packages
