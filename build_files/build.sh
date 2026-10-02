@@ -26,6 +26,9 @@ dnf5.real -y install @fonts @hardware-support \
   kitty \
   git \
   wget \
+  dns \
+  fastfetch \
+  hyprland \
   github-cli \
   flameshot \
   gh \
