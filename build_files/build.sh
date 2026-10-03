@@ -21,7 +21,9 @@ dnf5.real -y install @fonts @hardware-support \
   gnome-shell-extension-dash-to-dock \
   gnome-shell-extension-blur-my-shell \
   rakuos-welcome-gtk \
-  rakuos-software-gtk
+  rakuos-software-gtk \
+  kitty \
+  nautilus
 
 ## Remove packages
 dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
