@@ -7,7 +7,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/rakuos/rakuos-base:${BASE_IMAGE_TAG}
+FROM ghcr.io/rakuos/rakuos-gnome${BASE_IMAGE_TAG}
 COPY system_files /
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
