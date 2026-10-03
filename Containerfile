@@ -8,7 +8,7 @@ COPY build_files /
 
 # Base Image
 FROM ghcr.io/rakuos/rakuos-base:${BASE_IMAGE_TAG}
-COPY system_files /
+# COPY system_files /
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
