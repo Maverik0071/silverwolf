@@ -44,3 +44,12 @@ dnf5.real -y install @fonts @hardware-support \
   zoxide \
   zsh \
   usb-modeswitch --skip-unavailable
+
+## Remove packages
+dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
+
+## Compile GSettings schemas (picks up zz-rakuos-gnome.gschema.override)
+glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+## Enable Services
+systemctl enable gdm.service
