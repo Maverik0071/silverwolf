@@ -8,7 +8,8 @@ COPY build_files /
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
-FROM quay.io/fedora-ostree-desktops/base-atomic:${FEDORA_VERSION}
+FROM ghcr.io/rakuos/rakuos-base:${BASE_IMAGE_TAG}
+COPY system_files /
 # Or your specific desired starting base tag
 
 
