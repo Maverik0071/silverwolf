@@ -1,53 +1,101 @@
-# Global build arg — available to all FROM lines for image tag resolution.
-# Must NOT have ENV here; ENV is a layer instruction and cannot precede FROM.
-ARG BASE_IMAGE_TAG="${BASE_IMAGE_TAG:-latest}"
-ARG BASE_IMAGE_REPO="quay.io/rakuos/rakuos-base"
-ARG CHUNKAH_CONFIG_STR
+#!/bin/bash
 
-# Allow build scripts to be referenced without being copied into the final image
-FROM scratch AS ctx
-COPY build_files /
+set -ouex pipefail
 
-# Pull the RakuOS base image from the GitLab Container Registry.
-# BASE_IMAGE_TAG is re-declared inside this stage (ARG values defined before
-# the first FROM must be re-declared in each stage that needs them).
-FROM ${BASE_IMAGE_REPO}:${BASE_IMAGE_TAG} AS builder
-ARG BASE_IMAGE_TAG
-ENV BASE_IMAGE_TAG=${BASE_IMAGE_TAG}
-# Set by CI to "1" on the staging branch so build.sh installs the
-# rakuos-release-<de>-staging variant instead of rakuos-release-<de>.
-ARG RAKUOS_STAGING="0"
-ENV RAKUOS_STAGING=${RAKUOS_STAGING}
-COPY system_files /
+FEDORA_VERSION=$(rpm -E %fedora)
 
-RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
-    --mount=type=cache,dst=/var/cache \
-    --mount=type=cache,dst=/var/log \
-    --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh && /ctx/post-build.sh && /ctx/post-build-overlay.sh
+# On the staging branch (RAKUOS_STAGING=1, set via --build-arg from CI)
+# install the staging os-release identity instead of the stable one, so
+# staging images identify themselves as "RakuOS NIRI Staging".
+RAKUOS_RELEASE_PKG="rakuos-release-niri"
+if [ "${RAKUOS_STAGING:-0}" = "1" ]; then
+    RAKUOS_RELEASE_PKG="rakuos-release-niri-staging"
+fi
 
-COPY system_files /
+# Terra ships disabled by default (third-party repos are opt-in), so enable
+# it here in case any packages below come from Terra; post-build.sh disables
+# it again before the image is finalized.
+rum config-manager --set-enabled terra
 
-# Clean up real runtime state (systemd units started mid-build, akmods/
-# cryptsetup/etc. lock and socket files) that only ever makes sense on a
-# live booted system, before the lint step inspects the committed image.
-# This runs as its own RUN, after every mounted (--mount=type=secret/
-# cache/tmpfs) build step above has already finished and unmounted, so it
-# only ever touches plain files already baked into the layer — never a
-# live mount the build engine itself still has open.
-RUN find /run -mindepth 1 -delete 2>/dev/null || true; \
-    find /tmp -mindepth 1 -delete 2>/dev/null || true; \
-    find /boot -mindepth 1 -delete 2>/dev/null || true
+## Install packages
+# FIXME: Remove quickshell-git when Fedora gets 0.3 version
+# ghostty-kio satisfies ghostty's rich Requires (`ghostty-kio = ... if
+# kf6-kio-core`); without it baked in now, any later kf6-kio-core install
+# (e.g. kde-partitionmanager) fails once Terra is disabled below.
+rum install -y \
+  niri \
+  dms \
+  dankcalendar-git \
+  danksearch \
+  dgop \
+  dms-greeter \
+  nm-connection-editor \
+  pavucontrol \
+  ddcutil \
+  adw-gtk3-theme \
+  file-roller \
+  fprintd-pam \
+  gnome-calculator \
+  gnome-disk-utility \
+  gvfs-nfs \
+  ibus-mozc \
+  ibus-unikey \
+  nautilus \
+  cups-pk-helper \
+  tuned \
+  tuned-ppd \
+  gvfs \
+  gvfs-mtp \
+  cava \
+  wl-clipboard \
+  matugen \
+  quickshell-git \
+  wtype \
+  qt6ct-kde \
+  wl-mirror \
+  libnotify \
+  blueman \
+  gnome-keyring \
+  gnome-keyring-pam \
+  xwayland-satellite-0:0.8.1-1.fc44 \
+  NetworkManager-adsl \
+  NetworkManager-bluetooth \
+  NetworkManager-ppp \
+  NetworkManager-wwan \
+  pipewire \
+  pipewire-pulseaudio \
+  ghostty \
+  ghostty-nautilus \
+  ghostty-kio \
+  ${RAKUOS_RELEASE_PKG} \
+  rakuos-software-gtk \
+  rakuos-system-gtk \
+  rakuos-welcome-gtk \
+  systemd-oomd-defaults \
+  wireplumber \
+  xdg-desktop-portal \
+  xdg-desktop-portal-gnome \
+  xdg-desktop-portal-gtk \
+  xdg-user-dirs-gtk
 
-# RUN bootc container lint
+rum remove -y waybar swaylock alacritty fuzzel
 
-FROM quay.io/coreos/chunkah AS chunkah
-ARG CHUNKAH_CONFIG_STR
-RUN --mount=from=builder,src=/,target=/chunkah,ro \
-    --mount=type=bind,target=/run/src,rw \
-        chunkah build --prune /sysroot/ --max-layers 128 --compressed --threads 16 \
-          --label ostree.commit- --label ostree.final-diffid- \
-          > /run/src/out.ociarchive
+## Remove fedora wallpapers
+#rm -r /usr/share/backgrounds/fedora-workstation/
 
-FROM oci-archive:out.ociarchive
-LABEL containers.bootc=1
+## Fix default applications
+sed -i \
+  -e '/text\/plain=org\.gnome\.gedit\.desktop/d' \
+  -e '/org\.gnome\.eog\.desktop/d' \
+  -e '/org\.gnome\.Totem\.desktop/d' \
+  -e '/org\.gnome\.Rhythmbox3\.desktop/d' \
+  -e 's|application/pdf=org\.gnome\.Evince\.desktop|application/pdf=org.mozilla.firefox.desktop|g' \
+  /usr/share/applications/mimeapps.list
+
+## Unlock keyring on login
+sed -i -E 's/^-([a-z]+[[:space:]]+.*pam_gnome_keyring\.so)/\1/' /etc/pam.d/greetd
+
+## Enable Services
+systemctl enable greetd
+systemctl enable --global dotfiles-setup
+systemctl enable --global dsearch dms
