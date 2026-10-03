@@ -20,16 +20,27 @@ dnf5.real -y install @fonts @hardware-support \
   gnome-shell-extension-no-overview \
   gnome-shell-extension-dash-to-dock \
   gnome-shell-extension-blur-my-shell \
+  gnome-shell-extension-pop-shell \
   rakuos-welcome-gtk \
   rakuos-software-gtk \
   kitty \
-  nautilus
-
-## Remove packages
-dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
-
-## Compile GSettings schemas (picks up zz-rakuos-gnome.gschema.override)
-glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-## Enable Services
-systemctl enable gdm.service
+  git \
+  wget \
+  github-cli \
+  flameshot \
+  gh \
+  distrobox \
+  NetworkManager-tui \
+  firefox \
+  tor \
+  wireshark \
+  nmap \
+  ghidra \
+  dmenu \
+  dunst \
+  docker \
+  lm_sensors \
+  fzf \
+  zoxide \
+  zsh \
+  usb-modeswitch --skip-unavailable
