@@ -58,7 +58,6 @@ bore-sysctl \
 scx-scheds \
 scx-tools \
 gamemode \
-gamemode.i686 \
 pulseaudio-utils \
 dkms \
 akmods \
@@ -126,12 +125,12 @@ gnome-shell-extension-no-overview \
 gnome-shell-extension-dash-to-dock \
 gnome-shell-extension-blur-my-shell \
 rakuos-welcome-gtk \
-rakuos-software-gtk
+rakuos-software-gtk \
 #dnf5 install -y swww
-dnf5 install -y vim
+dnf5 install -y vim \
 #dnf5 install -y waypaper
-dnf5 install -y xkill
-dnf5 install -y zsh
+dnf5 install -y xkill \
+dnf5 install -y zsh \
 
 # Use a COPR Example:
 #
@@ -154,19 +153,6 @@ dnf5 -y install dms-greeter
 dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
 dnf5 -y copr disable avengemedia/danklinux
-
-#dnf5 copr enable heus-sueh/hyprland
-#dnf5 -y install swww
-#dnf5 -y install matugen
-#dnf5 -y copr disable heus-sueh/hyprland
-
-#dnf5 copr enable solopasha/hyprland
-#dnf5 -y install hyprland
-#dnf5 -y install hyprpolkit
-#dnf5 -y install hyprland
-#dnf5 -y install swaylock-effects
-#dnf5 -y install xdg-portal-desktop-hyprland
-#dnf5 -y copr disable solopasha/hyprland
 
 
   # Install cachyos kernel
