@@ -9,7 +9,6 @@ COPY build_files /
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
 FROM ghcr.io/rakuos/rakuos-base:${BASE_IMAGE_TAG}
-COPY system_files /
 # Or your specific desired starting base tag
 
 
