@@ -87,6 +87,7 @@ dnf5.real -y install @fonts @hardware-support \
   fzf \
   zoxide \
   zsh \
+  rum \
   usb-modeswitch --skip-unavailable
 
 ## Remove packages
