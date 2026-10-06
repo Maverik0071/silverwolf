@@ -3,13 +3,15 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/wayblueorg/hyprland:latest
+# FROM ghcr.io/wayblueorg/hyprland:latest
+FROM ghcr.io/rakuos/rakuos-base:latest
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
 #FROM ghcr.io/rakuos/rakuos-gnome:latest
-FROM ghcr.io/rakuos/rakuos-base:latest
+#FROM ghcr.io/rakuos/rakuos-base:latest
+FROM ghcr.io/wayblueorg/hyprland:latest
 # Or your specific desired starting base tag
 
 
