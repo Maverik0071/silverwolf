@@ -8,7 +8,8 @@ FROM ghcr.io/wayblueorg/hyprland:latest
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
-FROM ghcr.io/rakuos/rakuos-gnome:latest
+#FROM ghcr.io/rakuos/rakuos-gnome:latest
+FROM ghcr.io/rakuos/rakuos-base:latest
 # Or your specific desired starting base tag
 
 
