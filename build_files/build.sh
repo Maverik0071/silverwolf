@@ -51,6 +51,12 @@ done
 
 ## Install packages
 dnf5.real -y install @fonts @hardware-support \
+  gdm \
+  gnome-session \
+  gnome-shell \
+  gnome-settings-daemon \
+  gnome-backgrounds \
+  gnome-control-center \
   NetworkManager-bluetooth \
   pipewire \
   wireplumber \
@@ -96,4 +102,18 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 ## Enable Services
-systemctl enable gdm.service
+systemctl enable gdm.service \
+systemctl enable \
+rakuos-base-protect.service \
+rakuos-overlay-mount.service \
+rakuos-overlay-sync.service \
+rakuos-overlay-services.service \
+rakuos-flatpaks.service \
+rakuos-flatpak-watcher.service \
+rakuos-cache-clean.timer \
+fix-dkms.service \
+flatpak-cleanup.timer \
+flatpak-repair.timer \
+rpm-ostree-clean-metadata.timer \
+rpm-ostree-clean-deployments.timer \
+podman-prune.timer
