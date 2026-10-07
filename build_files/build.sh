@@ -60,6 +60,7 @@ dnf5.real -y install @fonts @hardware-support \
   NetworkManager-bluetooth \
   pipewire \
   wireplumber \
+  xdg-desktop-portal-hyprland \
   xdg-desktop-portal-gnome \
   rakuos-software-common \
   rakuos-software-gtk  
@@ -103,7 +104,6 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 ## Enable Services
 systemctl enable gdm.service \
-systemctl enable \
 rakuos-base-protect.service \
 rakuos-overlay-mount.service \
 rakuos-overlay-sync.service \
