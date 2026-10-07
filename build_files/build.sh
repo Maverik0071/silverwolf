@@ -13,7 +13,6 @@ dnf5 -y copr enable faugus/faugus-launcher fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable ilyaz/LACT fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable garecrow/ExtensionManager fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable wehagy/protonplus fedora-${FEDORA_VERSION}-x86_64
-dnf5 -y copr enable lionheartp/Hyprland fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y install \
 https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_VERSION}.noarch.rpm \
 https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_VERSION}.noarch.rpm
@@ -27,8 +26,8 @@ https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_
 #dnf5 -y install --nogpgcheck --repofrompath 'terra-mesa,https://repos.fyralabs.com/terra$releasever' terra-release-mesa
 #dnf5 -y install --nogpgcheck --repofrompath 'terra-multimedia,https://repos.fyralabs.com/terra$releasever' terra-release-multimedia
 #dnf5 -y install --nogpgcheck --repofrompath 'terra-nvidia,https://repos.fyralabs.com/terra$releasever' terra-release-nvidia
-#Remove hardcoded priority=80 from terra repo files so our config-manager priorities take effect
-#sed -i '/^priority=/d' /etc/yum.repos.d/terra*.repo
+# Remove hardcoded priority=80 from terra repo files so our config-manager priorities take effect
+sed -i '/^priority=/d' /etc/yum.repos.d/terra*.repo
 
 # Download Terra AppStream data for rakuos-software
 TERRA_BASE="https://repos.fyralabs.com/appstream"
@@ -60,16 +59,14 @@ dnf5.real -y install @fonts @hardware-support \
   NetworkManager-bluetooth \
   pipewire \
   wireplumber \
-  xdg-desktop-portal-hyprland \
   xdg-desktop-portal-gnome \
-  rakuos-software-common \
-  rakuos-software-gtk  
+  gnome-shell-extension-appindicator \
+  gnome-shell-extension-no-overview \
+  gnome-shell-extension-dash-to-dock \
+  gnome-shell-extension-blur-my-shell \
+  gnome-shell-extension-pop-shell \
   rakuos-welcome-gtk \
-  rakuos-inital-setup \
-  hyprland \
-  dms \
-  rofi \
-  dmenu \
+  rakuos-software-gtk \
   kitty \
   git \
   wget \
@@ -90,30 +87,7 @@ dnf5.real -y install @fonts @hardware-support \
   fzf \
   zoxide \
   zsh \
-  rum \
   usb-modeswitch --skip-unavailable
 
 ## Remove packages
 dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
-
-## Compile GSettings schemas (picks up zz-rakuos-gnome.gschema.override)
-glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-# enable flathub
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-## Enable Services
-systemctl enable gdm.service 
-#rakuos-base-protect.service \
-#rakuos-overlay-mount.service \
-#rakuos-overlay-sync.service \
-#rakuos-overlay-services.service \
-#rakuos-flatpaks.service \
-#rakuos-flatpak-watcher.service \
-#rakuos-cache-clean.timer \
-#fix-dkms.service \
-#flatpak-cleanup.timer \
-#flatpak-repair.timer \
-#rpm-ostree-clean-metadata.timer \
-#rpm-ostree-clean-deployments.timer \
-#podman-prune.timer
