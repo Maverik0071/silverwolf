@@ -51,23 +51,14 @@ done
 
 ## Install packages
 dnf5.real -y install @fonts @hardware-support \
-  gdm \
-  gnome-session \
-  gnome-shell \
-  gnome-settings-daemon \
-  gnome-backgrounds \
-  gnome-control-center \
   NetworkManager-bluetooth \
   pipewire \
   wireplumber \
   xdg-desktop-portal-gnome \
-  gnome-shell-extension-appindicator \
-  gnome-shell-extension-no-overview \
-  gnome-shell-extension-dash-to-dock \
-  gnome-shell-extension-blur-my-shell \
-  gnome-shell-extension-pop-shell \
+  rakuos-software-common \
+  rakuos-software-gtk  
   rakuos-welcome-gtk \
-  rakuos-software-gtk \
+  rakuos-inital-setup \
   hyprland \
   dms \
   rofi \
