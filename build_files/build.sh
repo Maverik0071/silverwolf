@@ -67,6 +67,10 @@ dnf5.real -y install @fonts @hardware-support \
   gnome-shell-extension-pop-shell \
   rakuos-welcome-gtk \
   rakuos-software-gtk \
+  hyprland \
+  dms \
+  rofi \
+  dmenu \
   kitty \
   git \
   wget \
