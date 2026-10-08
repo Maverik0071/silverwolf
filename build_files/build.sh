@@ -109,12 +109,12 @@ dms.service \
 #rakuos-flatpaks.service \
 #rakuos-flatpak-watcher.service \
 #rakuos-cache-clean.timer \
-fix-dkms.service \
-flatpak-cleanup.timer \
-flatpak-repair.timer \
-rpm-ostree-clean-metadata.timer \
-rpm-ostree-clean-deployments.timer \
-podman-prune.timer
+#fix-dkms.service \
+#flatpak-cleanup.timer \
+#flatpak-repair.timer \
+#rpm-ostree-clean-metadata.timer \
+#rpm-ostree-clean-deployments.timer \
+#podman-prune.timer
 
 systemctl enable --global \
 rakuos-user.service
