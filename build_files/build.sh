@@ -51,6 +51,7 @@ done
 ## Install packages
 dnf5.real -y install @fonts @hardware-support \
   dms \
+  hyprland \
   #gdm \
   #gnome-session \
   #gnome-shell \
@@ -94,9 +95,9 @@ dnf5.real -y install @fonts @hardware-support \
 # dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
 
 # Disable services
-systemctl disable flatpak-add-fedora-repos.service
-systemctl mask akmods-keygen@akmods-keygen.service
-systemctl mask systemd-remount-fs.service
+#systemctl disable flatpak-add-fedora-repos.service
+#systemctl mask akmods-keygen@akmods-keygen.service
+#systemctl mask systemd-remount-fs.service
 
 #enable enable services
 systemctl enable \
