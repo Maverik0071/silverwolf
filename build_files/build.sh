@@ -102,13 +102,13 @@ dnf5.real -y install @fonts @hardware-support \
 #enable enable services
 systemctl enable \
 dms.service \
-rakuos-base-protect.service \
-rakuos-overlay-mount.service \
-rakuos-overlay-sync.service \
-rakuos-overlay-services.service \
-rakuos-flatpaks.service \
-rakuos-flatpak-watcher.service \
-rakuos-cache-clean.timer \
+#rakuos-base-protect.service \
+#rakuos-overlay-mount.service \
+#rakuos-overlay-sync.service \
+#rakuos-overlay-services.service \
+#rakuos-flatpaks.service \
+#rakuos-flatpak-watcher.service \
+#rakuos-cache-clean.timer \
 fix-dkms.service \
 flatpak-cleanup.timer \
 flatpak-repair.timer \
