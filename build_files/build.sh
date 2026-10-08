@@ -50,6 +50,7 @@ done
 
 ## Install packages
 dnf5.real -y install @fonts @hardware-support \
+  dms \
   #gdm \
   #gnome-session \
   #gnome-shell \
@@ -90,7 +91,7 @@ dnf5.real -y install @fonts @hardware-support \
   usb-modeswitch --skip-unavailable
 
 ## Remove packages
-dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
+# dnf5.real -y remove gnome-software-rpm-ostree gnome-tour
 
 # Disable services
 systemctl disable flatpak-add-fedora-repos.service
@@ -99,6 +100,7 @@ systemctl mask systemd-remount-fs.service
 
 #enable enable services
 systemctl enable \
+dms.service \
 rakuos-base-protect.service \
 rakuos-overlay-mount.service \
 rakuos-overlay-sync.service \
