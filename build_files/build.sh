@@ -122,6 +122,8 @@ dnf5 install -y squashfuse
 dnf5 install -y virtualbox-guest-additions
 dnf5 install -y v4l-utils
 dnf5 install -y unzip
+dnf5 install -y rakuos-welcome-qt
+dnf5 install -y rakuos-software-qt
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
