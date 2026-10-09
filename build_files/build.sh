@@ -48,14 +48,14 @@ dnf5 install -y zsh
 # dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
-dnf5 -y install hyprland
+#dnf5 -y install hyprland
 dnf5 -y install dms
 dnf5 -y install dms-greeter
 dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
-dnf5 -y install hyprland-guiutils
-dnf5 -y install hyprland-protocols
-dnf5 -y install hyprpaper
+#dnf5 -y install hyprland-guiutils
+#dnf5 -y install hyprland-protocols
+#dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
 dnf5 -y copr disable lionheartp/Hyprland
 
@@ -82,4 +82,4 @@ dnf5 -y copr disable lionheartp/Hyprland
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable dms
+systemctl enable dms-greeter
