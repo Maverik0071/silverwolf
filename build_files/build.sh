@@ -107,8 +107,6 @@ dnf5 -y install dms
 dnf5 -y install quickshell
 dnf5 -y copr disable avengemedia/danklinux
 
-dnf5 remove gnome-\*
-
 #dnf5 copr enable heus-sueh/hyprland
 #dnf5 -y install swww
 #dnf5 -y install matugen
