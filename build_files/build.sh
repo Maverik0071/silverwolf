@@ -49,12 +49,12 @@ dnf5 install -y zsh
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
 dnf5 -y install hyprland
-nf5 -y install dms
-ddnf5 -y install dms-greeter
+dnf5 -y install dms
+dnf5 -y install dms-greeter
 dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
 dnf5 -y install hyprland-guiutils
-# dnf5 -y install hyprland-protocols
+dnf5 -y install hyprland-protocols
 dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
 dnf5 -y copr disable lionheartp/Hyprland
