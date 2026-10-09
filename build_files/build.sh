@@ -59,12 +59,12 @@ dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
 dnf5 -y copr disable lionheartp/Hyprland
 
-dnf5 -y copr enable avengemedia/danklinux
-dnf5 -y install dms
-dnf5 -y install dms-greeter
-dnf5 -y install dms dms-greeter
-dnf5 -y install quickshell
-dnf5 -y copr disable avengemedia/danklinux
+#dnf5 -y copr enable avengemedia/danklinux
+#dnf5 -y install dms
+#dnf5 -y install dms-greeter
+#dnf5 -y install dms dms-greeter
+#dnf5 -y install quickshell
+#dnf5 -y copr disable avengemedia/danklinux
 
 #dnf5 copr enable heus-sueh/hyprland
 #dnf5 -y install swww
