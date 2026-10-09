@@ -12,7 +12,7 @@ FROM ghcr.io/wayblueorg/hyprland:latest
 #FROM ghcr.io/rakuos/rakuos-gnome:latest
 #FROM ghcr.io/rakuos/rakuos-base:latest
 #FROM ghcr.io/wayblueorg/hyprland:latest
-FROM ghcr.io/wayblueorg/hyprland:44
+#FROM ghcr.io/wayblueorg/hyprland:44
 # Or your specific desired starting base tag
 
 
