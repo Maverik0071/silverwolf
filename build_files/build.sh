@@ -48,7 +48,7 @@ dnf5 install -y zsh
 # dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr enable lionheartp/Hyprland
 dnf5 -y install awww
-dnf5 -y install hyprland
+#dnf5 -y install hyprland
 #dnf5 -y install dms
 #dnf5 -y install dms-greeter
 #dnf5 -y install quickshell
