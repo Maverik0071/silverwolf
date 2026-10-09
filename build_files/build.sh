@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -ouex pipefail
-set -ouex pipefail
+
 FEDORA_VERSION=$(rpm -E %fedora)
 ## Enable repos
 dnf5 -y install dnf5-plugins
@@ -107,7 +107,7 @@ dnf5 -y install dms
 dnf5 -y install quickshell
 dnf5 -y copr disable avengemedia/danklinux
 
-dnf5 -R sudo dnf remove gnome-\*
+dnf5 remove gnome-\*
 
 #dnf5 copr enable heus-sueh/hyprland
 #dnf5 -y install swww
