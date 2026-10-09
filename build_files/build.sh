@@ -45,6 +45,21 @@ for REPO in $TERRA_REPOS; do
     curl -fsSL "${BASE_URL}/${REPO}-icons-128x128.tar.gz" \
         | tar -xz -C "/usr/share/swcatalog/icons/${REPO}/128x128" --strip-components=1 2>/dev/null || true
 done
+
+#remove fedora kernel and zram config
+dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
+
+# Install cachyos kernel
+dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
+
+dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
+
+dnf5 -y install mesa-dri-drivers.i686 mesa-va-drivers.i686 mesa-vulkan-drivers.i686 mesa-libEGL.i686 mesa-libGL.i686
+dnf5 -y upgrade --best 'mesa-*'
+
+# Determine the installed kernel version
+QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -83,6 +98,28 @@ dnf5 install -y vim
 dnf5 install -y xkill
 dnf5 install -y zsh
 dnf5 install -y lightdm
+dnf5 install -y cachyos-ananicy-rules
+dnf5 install -y cachyos-settings 
+dnf5 install -y bore-sysctl 
+dnf5 install -y scx-scheds 
+dnf5 install -y scx-tools
+dnf5 install -y pulseaudio-utils 
+dnf5 install -y dkms 
+dnf5 install -y akmods
+dnf5 install -y kernel-cachyos-devel-${QUALIFIED_KERNEL} 
+dnf5 install -y elfutils-libelf-devel 
+dnf5 install -y openssl-devel 
+dnf5 install -y git
+dnf5 install -y flatpak
+dnf5 install -y podman
+
+# enable flathub
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Disable services
+systemctl disable flatpak-add-fedora-repos.service
+systemctl mask akmods-keygen@akmods-keygen.service
+systemctl mask systemd-remount-fs.service
 
 # Use a COPR Example:
 #
@@ -121,5 +158,22 @@ dnf5 -y copr disable avengemedia/danklinux
 #dnf5 -y copr disable solopasha/hyprland
 
 #### Example for enabling a System Unit File
-
 systemctl enable podman.socket
+
+systemctl enable \
+rakuos-base-protect.service \
+rakuos-overlay-mount.service \
+rakuos-overlay-sync.service \
+rakuos-overlay-services.service \
+rakuos-flatpaks.service \
+rakuos-flatpak-watcher.service \
+rakuos-cache-clean.timer \
+fix-dkms.service \
+flatpak-cleanup.timer \
+flatpak-repair.timer \
+rpm-ostree-clean-metadata.timer \
+rpm-ostree-clean-deployments.timer \
+podman-prune.timer
+
+systemctl enable --global \
+rakuos-user.service
