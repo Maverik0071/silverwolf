@@ -100,9 +100,9 @@ dnf5 install -y zsh
 dnf5 install -y lightdm
 #dnf5 install -y cachyos-ananicy-rules
 #dnf5 install -y cachyos-settings 
-dnf5 install -y bore-sysctl 
-dnf5 install -y scx-scheds 
-dnf5 install -y scx-tools
+#dnf5 install -y bore-sysctl 
+#dnf5 install -y scx-scheds 
+#dnf5 install -y scx-tools
 dnf5 install -y pulseaudio-utils 
 dnf5 install -y dkms 
 dnf5 install -y akmods
