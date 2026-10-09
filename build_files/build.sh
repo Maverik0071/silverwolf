@@ -171,7 +171,7 @@ dnf5 -y copr disable avengemedia/danklinux
 systemctl enable podman.socket
 
 systemctl enable \
-rakuos-base-protect.service \
+# rakuos-base-protect.service \
 rakuos-overlay-mount.service \
 rakuos-overlay-sync.service \
 rakuos-overlay-services.service \
