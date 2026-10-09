@@ -86,7 +86,7 @@ dnf5 install -y jgmenu
 dnf5 install -y jgmenu-gtktheme
 dnf5 install -y jgmenu-pmenu
 dnf5 install -y lm_sensors
-dnf5 install -y lsd mako
+dnf5 install -y lsd
 dnf5 install -y neovim
 dnf5 install -y NetworkManager-tui
 dnf5 install -y picom
@@ -98,8 +98,8 @@ dnf5 install -y vim
 dnf5 install -y xkill
 dnf5 install -y zsh
 dnf5 install -y lightdm
-dnf5 install -y cachyos-ananicy-rules
-dnf5 install -y cachyos-settings 
+#dnf5 install -y cachyos-ananicy-rules
+#dnf5 install -y cachyos-settings 
 dnf5 install -y bore-sysctl 
 dnf5 install -y scx-scheds 
 dnf5 install -y scx-tools
@@ -112,6 +112,16 @@ dnf5 install -y openssl-devel
 dnf5 install -y git
 dnf5 install -y flatpak
 dnf5 install -y podman
+dnf5 install -y python3-pip
+dnf5 install -y python3-setuptools
+dnf5 install -y appstream
+dnf5 install -y appstream-data 
+dnf5 install -y fwupd
+dnf5 install -y fuse
+dnf5 install -y squashfuse
+dnf5 install -y virtualbox-guest-additions
+dnf5 install -y v4l-utils
+dnf5 install -y unzip
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
