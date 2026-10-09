@@ -52,9 +52,9 @@ dnf5 -y install awww
 #dnf5 -y install dms
 #dnf5 -y install dms-greeter
 #dnf5 -y install quickshell
-dnf5 -y install hyprland-guiutils
-dnf5 -y install hyprland-protocols
-dnf5 -y install hyprpaper
+#dnf5 -y install hyprland-guiutils
+#dnf5 -y install hyprland-protocols
+#dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
 dnf5 -y copr disable lionheartp/Hyprland
 
