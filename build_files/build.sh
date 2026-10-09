@@ -39,6 +39,7 @@ dnf5 install -y vim
 #dnf5 install -y waypaper
 dnf5 install -y xkill
 dnf5 install -y zsh
+dnf5 install -y lightdm
 
 # Use a COPR Example:
 #
@@ -79,4 +80,4 @@ dnf5 -y copr disable avengemedia/danklinux
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable slick-greeter
+systemctl enable lightdm
