@@ -51,7 +51,6 @@ dnf5 -y install awww
 #dnf5 -y install hyprland
 dnf5 -y install dms
 dnf5 -y install dms-greeter
-dnf5 -y install dms dms-greeter
 dnf5 -y install quickshell
 #dnf5 -y install hyprland-guiutils
 #dnf5 -y install hyprland-protocols
