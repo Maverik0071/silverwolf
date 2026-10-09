@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set -ouex pipefail
-
 FEDORA_VERSION=$(rpm -E %fedora)
+
 ## Enable repos
 dnf5 -y install dnf5-plugins
 dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
@@ -52,7 +52,7 @@ dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-
 # Install cachyos kernel
 dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
 
-dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
+#dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
 
 dnf5 -y install mesa-dri-drivers.i686 mesa-va-drivers.i686 mesa-vulkan-drivers.i686 mesa-libEGL.i686 mesa-libGL.i686
 dnf5 -y upgrade --best 'mesa-*'
