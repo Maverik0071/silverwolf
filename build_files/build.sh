@@ -186,4 +186,4 @@ systemctl enable podman.socket
 #systemctl enable podman-prune.timer
 
 # systemctl enable --global 
-systemctl enable rakuos-user.service
+# systemctl enable rakuos-user.service
