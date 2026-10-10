@@ -61,16 +61,9 @@ dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-m
 QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
 
 ### Install packages
-
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
-
 # this installs a package from fedora repos
 dnf5 install -y tmux
 dnf5 install -y alacritty
-# dnf5 install -y brave-origin-nightly
 dnf5 install -y distrobox
 dnf5 install -y dmenu
 dnf5 install -y dunst
@@ -106,7 +99,7 @@ dnf5 install -y lightdm
 dnf5 install -y pulseaudio-utils 
 dnf5 install -y dkms 
 dnf5 install -y akmods
-dnf5 install -y kernel-cachyos-devel-${QUALIFIED_KERNEL} 
+#dnf5 install -y kernel-cachyos-devel-${QUALIFIED_KERNEL} 
 dnf5 install -y elfutils-libelf-devel 
 dnf5 install -y openssl-devel 
 dnf5 install -y git
@@ -123,8 +116,8 @@ dnf5 install -y virtualbox-guest-additions
 dnf5 install -y v4l-utils
 dnf5 install -y unzip
 dnf5 install -y docker
-dnf5 install -y rakuos-welcome-qt
-dnf5 install -y rakuos-software-qt
+#dnf5 install -y rakuos-welcome-qt
+#dnf5 install -y rakuos-software-qt
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
