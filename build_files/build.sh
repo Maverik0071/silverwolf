@@ -171,21 +171,19 @@ dnf5 -y copr disable avengemedia/danklinux
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
-
-systemctl enable \
 # rakuos-base-protect.service \
-rakuos-overlay-mount.service \
-rakuos-overlay-sync.service \
-rakuos-overlay-services.service \
-rakuos-flatpaks.service \
-rakuos-flatpak-watcher.service \
-rakuos-cache-clean.timer \
-fix-dkms.service \
-flatpak-cleanup.timer \
-flatpak-repair.timer \
-rpm-ostree-clean-metadata.timer \
-rpm-ostree-clean-deployments.timer \
-podman-prune.timer
+systemctl enable rakuos-overlay-mount.service 
+systemctl enable rakuos-overlay-sync.service 
+systemctl enable rakuos-overlay-services.service 
+systemctl enable rakuos-flatpaks.service 
+systemctl enable rakuos-flatpak-watcher.service 
+systemctl enable rakuos-cache-clean.timer 
+systemctl enable fix-dkms.service 
+systemctl enable flatpak-cleanup.timer 
+systemctl enable flatpak-repair.timer 
+systemctl enable rpm-ostree-clean-metadata.timer 
+systemctl enable rpm-ostree-clean-deployments.timer 
+systemctl enable podman-prune.timer
 
-systemctl enable --global \
-rakuos-user.service
+systemctl enable --global 
+systemctl enable rakuos-user.service
