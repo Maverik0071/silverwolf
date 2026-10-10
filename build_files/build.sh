@@ -179,10 +179,10 @@ systemctl enable podman.socket
 #systemctl enable rakuos-flatpak-watcher.service 
 #systemctl enable rakuos-cache-clean.timer 
 #systemctl enable fix-dkms.service 
-systemctl enable flatpak-cleanup.timer 
-systemctl enable flatpak-repair.timer 
-systemctl enable rpm-ostree-clean-metadata.timer 
-systemctl enable rpm-ostree-clean-deployments.timer 
+#systemctl enable flatpak-cleanup.timer 
+#systemctl enable flatpak-repair.timer 
+#systemctl enable rpm-ostree-clean-metadata.timer 
+#systemctl enable rpm-ostree-clean-deployments.timer 
 systemctl enable podman-prune.timer
 
 systemctl enable --global 
