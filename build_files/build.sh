@@ -185,5 +185,5 @@ systemctl enable podman.socket
 #systemctl enable rpm-ostree-clean-deployments.timer 
 #systemctl enable podman-prune.timer
 
-systemctl enable --global 
+# systemctl enable --global 
 systemctl enable rakuos-user.service
