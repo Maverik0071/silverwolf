@@ -122,6 +122,7 @@ dnf5 install -y squashfuse
 dnf5 install -y virtualbox-guest-additions
 dnf5 install -y v4l-utils
 dnf5 install -y unzip
+dnf5 install -y docker
 dnf5 install -y rakuos-welcome-qt
 dnf5 install -y rakuos-software-qt
 
