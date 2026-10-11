@@ -170,7 +170,7 @@ dnf5 -y install traceroute
 #dnf5 -y install --skip-unavailable josh
 #dnf5 -y install --skip-unavailable theharvester
 dnf5 -y install aircrack-ng
-dnf5 -y install bully
+#dnf5 -y install bully
 dnf5 -y install metasploit
 dnf5 -y copr disable bytehackr/Security-Tools
 
