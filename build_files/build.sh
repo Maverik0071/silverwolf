@@ -167,7 +167,7 @@ dnf5 -y copr enable bytehackr/Security-Tools
 dnf5 -y install nmap
 dnf5 -y install wireshark
 dnf5 -y install traceroute
-dnf5 -y install josh
+dnf5 -y install --skip-unavailable josh
 dnf5 -y install theharvester
 dnf5 -y install aircrack
 dnf5 -y install bully
