@@ -47,7 +47,7 @@ for REPO in $TERRA_REPOS; do
 done
 
 #remove fedora kernel and zram config
-dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
+# dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
 
 # Install cachyos kernel
 dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
@@ -58,7 +58,7 @@ dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-m
 #dnf5 -y upgrade --best 'mesa-*'
 
 # Determine the installed kernel version
-QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
+#QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
 
 ### Install packages
 # this installs a package from fedora repos
