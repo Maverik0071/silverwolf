@@ -6,7 +6,6 @@ FEDORA_VERSION=$(rpm -E %fedora)
 ## Enable repos
 dnf5 -y install dnf5-plugins
 dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
-dnf5 -y copr enable bytehackr/Security-Tools-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable faugus/faugus-launcher fedora-${FEDORA_VERSION}-x86_64
@@ -163,6 +162,17 @@ dnf5 -y copr disable avengemedia/danklinux
 #dnf5 -y install swaylock-effects
 #dnf5 -y install xdg-portal-desktop-hyprland
 #dnf5 -y copr disable solopasha/hyprland
+
+dnf5 -y copr enable bytehackr/Security-Tools
+dnf5 -y install nmap
+dnf5 -y install wireshark
+dnf5 -y install traceroute
+dnf5 -y install josh
+dnf5 -y install theharvester
+dnf5 -y install aircrack
+dnf5 -y install bully
+dnf5 -y install metasploit
+dnf5 -y copr disable bytehackr/Security-Tools
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
