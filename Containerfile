@@ -36,12 +36,22 @@ FROM ghcr.io/wayblueorg/hyprland:latest
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
+#RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
+#    --mount=type=cache,dst=/var/cache \
+#    --mount=type=cache,dst=/var/log \
+#    --mount=type=tmpfs,dst=/tmp \
+#    /ctx/build.sh
+
+#RUN rm /opt && ln -s -T /var/opt /opt
+RUN mkdir -p /var/nix && ln -s /var/nix /nix
+COPY system_files /
+
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh
-    
+    /ctx/build.sh && /ctx/drivers.sh && /ctx/post-build.sh
+
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
