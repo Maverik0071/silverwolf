@@ -47,7 +47,7 @@ for REPO in $TERRA_REPOS; do
 done
 
 #remove fedora kernel and zram config
-# dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
+dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
 
 # Install cachyos kernel
 dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
@@ -58,7 +58,7 @@ dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-m
 #dnf5 -y upgrade --best 'mesa-*'
 
 # Determine the installed kernel version
-#QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
+QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
 
 ### Install packages
 # this installs a package from fedora repos
@@ -97,10 +97,10 @@ dnf5 install -y lightdm
 #dnf5 install -y scx-scheds 
 #dnf5 install -y scx-tools
 dnf5 install -y pulseaudio-utils 
-dnf5 install -y dkms 
-dnf5 install -y akmods
+#dnf5 install -y dkms 
+#dnf5 install -y akmods
 #dnf5 install -y kernel-cachyos-devel-${QUALIFIED_KERNEL} 
-dnf5 install -y elfutils-libelf-devel 
+#dnf5 install -y elfutils-libelf-devel 
 dnf5 install -y openssl-devel 
 dnf5 install -y git
 dnf5 install -y flatpak
@@ -116,8 +116,8 @@ dnf5 install -y virtualbox-guest-additions
 dnf5 install -y v4l-utils
 dnf5 install -y unzip
 dnf5 install -y docker
-#dnf5 install -y rakuos-welcome-qt
-#dnf5 install -y rakuos-software-qt
+dnf5 install -y rakuos-welcome-qt
+dnf5 install -y rakuos-software-qt
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
