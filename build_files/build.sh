@@ -83,7 +83,7 @@ dnf5 install -y lsd
 dnf5 install -y neovim
 dnf5 install -y NetworkManager-tui
 dnf5 install -y picom
-dnf5 install -y quickshell
+#dnf5 install -y quickshell
 dnf5 install -y rofi
 #dnf5 install -y swww
 dnf5 install -y vim
