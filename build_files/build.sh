@@ -164,15 +164,15 @@ dnf5 -y copr disable avengemedia/danklinux
 #dnf5 -y copr disable solopasha/hyprland
 
 dnf5 -y copr enable bytehackr/Security-Tools
-dnf5 -y install nmap
-dnf5 -y install wireshark
-dnf5 -y install traceroute
+#dnf5 -y install nmap
+#dnf5 -y install wireshark
+#dnf5 -y install traceroute
 #dnf5 -y install --skip-unavailable josh
 #dnf5 -y install --skip-unavailable theharvester
-dnf5 -y install aircrack-ng
+#dnf5 -y install aircrack-ng
 #dnf5 -y install bully
 # dnf5 -y install metasploit
-dnf5 -y copr disable bytehackr/Security-Tools
+#dnf5 -y copr disable bytehackr/Security-Tools
 
 #### Example for enabling a System Unit File
 #systemctl enable podman.socket
