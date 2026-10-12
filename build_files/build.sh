@@ -163,7 +163,7 @@ dnf5 -y copr disable avengemedia/danklinux
 #dnf5 -y install xdg-portal-desktop-hyprland
 #dnf5 -y copr disable solopasha/hyprland
 
-dnf5 -y copr enable bytehackr/Security-Tools
+#dnf5 -y copr enable bytehackr/Security-Tools
 #dnf5 -y install nmap
 #dnf5 -y install wireshark
 #dnf5 -y install traceroute
