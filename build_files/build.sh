@@ -147,7 +147,7 @@ dnf5 -y copr disable lionheartp/Hyprland
 
 dnf5 -y copr enable avengemedia/danklinux
 dnf5 -y install dms
-dnf5 -y install quickshell
+#dnf5 -y install quickshell
 dnf5 -y copr disable avengemedia/danklinux
 
 #dnf5 copr enable heus-sueh/hyprland
