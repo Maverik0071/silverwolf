@@ -123,9 +123,9 @@ dnf5 install -y rakuos-software-qt
 # flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Disable services
-#systemctl disable flatpak-add-fedora-repos.service
-#systemctl mask akmods-keygen@akmods-keygen.service
-#systemctl mask systemd-remount-fs.service
+systemctl disable flatpak-add-fedora-repos.service
+systemctl mask akmods-keygen@akmods-keygen.service
+systemctl mask systemd-remount-fs.service
 
 # Use a COPR Example:
 #
