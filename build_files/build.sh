@@ -120,7 +120,7 @@ dnf5 install -y rakuos-welcome-qt
 dnf5 install -y rakuos-software-qt
 
 # enable flathub
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Disable services
 #systemctl disable flatpak-add-fedora-repos.service
