@@ -4,10 +4,10 @@ set -ouex pipefail
 FEDORA_VERSION=$(rpm -E %fedora)
 
 ## Enable repos
-# dnf5 -y install dnf5-plugins
+dnf5 -y install dnf5-plugins
 dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
-#dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
-#dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
+dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
+dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable faugus/faugus-launcher fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable ilyaz/LACT fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable garecrow/ExtensionManager fedora-${FEDORA_VERSION}-x86_64
@@ -21,12 +21,12 @@ https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_
 #rpm --import https://repos.fyralabs.com/terra${FEDORA_VERSION}-mesa/key.asc
 #rpm --import https://repos.fyralabs.com/terra${FEDORA_VERSION}-multimedia/key.asc
 #rpm --import https://repos.fyralabs.com/terra${FEDORA_VERSION}-nvidia/key.asc
-#dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-#dnf5 -y install --nogpgcheck --repofrompath 'terra-mesa,https://repos.fyralabs.com/terra$releasever' terra-release-mesa
-#dnf5 -y install --nogpgcheck --repofrompath 'terra-multimedia,https://repos.fyralabs.com/terra$releasever' terra-release-multimedia
+dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+dnf5 -y install --nogpgcheck --repofrompath 'terra-mesa,https://repos.fyralabs.com/terra$releasever' terra-release-mesa
+dnf5 -y install --nogpgcheck --repofrompath 'terra-multimedia,https://repos.fyralabs.com/terra$releasever' terra-release-multimedia
 #dnf5 -y install --nogpgcheck --repofrompath 'terra-nvidia,https://repos.fyralabs.com/terra$releasever' terra-release-nvidia
 # Remove hardcoded priority=80 from terra repo files so our config-manager priorities take effect
-#sed -i '/^priority=/d' /etc/yum.repos.d/terra*.repo
+sed -i '/^priority=/d' /etc/yum.repos.d/terra*.repo
 
 # Download Terra AppStream data for rakuos-software
 TERRA_BASE="https://repos.fyralabs.com/appstream"
@@ -47,18 +47,18 @@ for REPO in $TERRA_REPOS; do
 done
 
 #remove fedora kernel and zram config
-#dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
+dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
 
 # Install cachyos kernel
-#dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
+dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
 
-# dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
+ dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
 
 #dnf5 -y install mesa-dri-drivers.i686 mesa-va-drivers.i686 mesa-vulkan-drivers.i686 mesa-libEGL.i686 mesa-libGL.i686
 #dnf5 -y upgrade --best 'mesa-*'
 
 # Determine the installed kernel version
-# QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
+ QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
 
 ### Install packages
 # this installs a package from fedora repos
