@@ -176,6 +176,8 @@ dnf5 -y copr disable bytehackr/Security-Tools
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
+systemctl enable lightdm
+systemctl start lightdm
 # rakuos-base-protect.service \
 #systemctl enable rakuos-overlay-mount.service 
 #systemctl enable rakuos-overlay-sync.service 
