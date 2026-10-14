@@ -6,8 +6,8 @@ FEDORA_VERSION=$(rpm -E %fedora)
 ## Enable repos
 dnf5 -y install dnf5-plugins
 dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
-dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
-dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
+#dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
+#dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable faugus/faugus-launcher fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable ilyaz/LACT fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y copr enable garecrow/ExtensionManager fedora-${FEDORA_VERSION}-x86_64
@@ -47,18 +47,18 @@ for REPO in $TERRA_REPOS; do
 done
 
 #remove fedora kernel and zram config
-dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
+#dnf5 -y remove --no-autoremove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs zram-generator-defaults
 
 # Install cachyos kernel
-dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
+#dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
 
- dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
+ #dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
 
 #dnf5 -y install mesa-dri-drivers.i686 mesa-va-drivers.i686 mesa-vulkan-drivers.i686 mesa-libEGL.i686 mesa-libGL.i686
 #dnf5 -y upgrade --best 'mesa-*'
 
 # Determine the installed kernel version
- QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
+# QUALIFIED_KERNEL=$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' kernel-cachyos)
 
 ### Install packages
 # this installs a package from fedora repos
@@ -145,10 +145,10 @@ dnf5 install -y rakuos-software-qt
 #dnf5 -y install nwg-look
 #dnf5 -y copr disable lionheartp/Hyprland
 
-#dnf5 -y copr enable avengemedia/danklinux
-#dnf5 -y install dms
-#dnf5 -y install quickshell
-#dnf5 -y copr disable avengemedia/danklinux
+dnf5 -y copr enable avengemedia/danklinux
+dnf5 -y install dms
+dnf5 -y install quickshell
+dnf5 -y copr disable avengemedia/danklinux
 
 #dnf5 copr enable heus-sueh/hyprland
 #dnf5 -y install swww
@@ -163,16 +163,16 @@ dnf5 install -y rakuos-software-qt
 #dnf5 -y install xdg-portal-desktop-hyprland
 #dnf5 -y copr disable solopasha/hyprland
 
-#dnf5 -y copr enable bytehackr/Security-Tools
-#dnf5 -y install nmap
-#dnf5 -y install wireshark
-#dnf5 -y install traceroute
+dnf5 -y copr enable bytehackr/Security-Tools
+dnf5 -y install nmap
+dnf5 -y install wireshark
+dnf5 -y install traceroute
 #dnf5 -y install --skip-unavailable josh
 #dnf5 -y install --skip-unavailable theharvester
 #dnf5 -y install aircrack-ng
 #dnf5 -y install bully
 # dnf5 -y install metasploit
-#dnf5 -y copr disable bytehackr/Security-Tools
+dnf5 -y copr disable bytehackr/Security-Tools
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
