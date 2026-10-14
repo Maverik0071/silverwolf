@@ -32,7 +32,8 @@ FROM quay.io/rakuos/rakuos-niri:latest
 ## by the package manager.
 
 # RUN rm /opt && mkdir /opt
-# RUN rm -rf /opt && ln -s /var/opt /opt
+RUN mkdir -p /var/nix && ln -s /var/nix /nix
+COPY system_files /
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
@@ -42,7 +43,8 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh
+    /ctx/build.sh && /ctx/drivers.sh && /ctx/post-build.sh
+  #  /ctx/build.sh
 
 ### LINTING
 ## Verify final image and contents are correct.
