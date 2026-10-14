@@ -33,8 +33,8 @@ FROM ghcr.io/wayblueorg/sway:latest
 ## by the package manager.
 
 # RUN rm /opt && mkdir /opt
-RUN mkdir -p /var/nix && ln -s /var/nix /nix
-COPY system_files /
+#RUN mkdir -p /var/nix && ln -s /var/nix /nix
+#COPY system_files /
 
 ### MODIFICATIONS
 ## make modifications desired in your image and install packages by modifying the build.sh script
