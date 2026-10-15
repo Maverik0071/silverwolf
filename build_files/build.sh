@@ -121,12 +121,12 @@ dnf5 install -y rakuos-software-qt
 dnf5 install -y greetd
 
 # enable flathub
-# flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Disable services
-#systemctl disable flatpak-add-fedora-repos.service
-#systemctl mask akmods-keygen@akmods-keygen.service
-#systemctl mask systemd-remount-fs.service
+systemctl disable flatpak-add-fedora-repos.service
+systemctl mask akmods-keygen@akmods-keygen.service
+systemctl mask systemd-remount-fs.service
 
 # Use a COPR Example:
 #
@@ -177,8 +177,8 @@ dnf5 -y copr disable bytehackr/Security-Tools
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
-systemctl enable greetd
-systemctl start greetd
+#systemctl enable greetd
+#systemctl start greetd
 #systemctl enable --global dotfiles-setup
 # rakuos-base-protect.service \
 #systemctl enable rakuos-overlay-mount.service 
