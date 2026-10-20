@@ -119,6 +119,8 @@ dnf5 install -y docker
 dnf5 install -y rakuos-welcome-qt
 dnf5 install -y rakuos-software-qt
 dnf5 install -y greetd
+dnf5 install -y opensc
+dnf5 install - ccid
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -177,6 +179,7 @@ dnf5 -y copr disable bytehackr/Security-Tools
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
+ssystemctl enable pcscd.socket
 #systemctl enable greetd
 #systemctl start greetd
 #systemctl enable --global dotfiles-setup
