@@ -7,7 +7,7 @@ COPY build_files /
 # FROM ghcr.io/rakuos/rakuos-base:latest
 #FROM quay.io/rakuos/rakuos-niri:latest
 #FROM ghcr.io/wayblueorg/sway:latest
-#ROM ghcr.io/ublue-os/bluefin:latest
+FROM ghcr.io/ublue-os/bluefin:latest
 
 
 ## Other possible base images include:
