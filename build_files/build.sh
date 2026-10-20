@@ -179,7 +179,7 @@ dnf5 -y copr disable bytehackr/Security-Tools
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
-ssystemctl enable pcscd.socket
+systemctl enable pcscd.socket
 #systemctl enable greetd
 #systemctl start greetd
 #systemctl enable --global dotfiles-setup
