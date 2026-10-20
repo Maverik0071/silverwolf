@@ -148,6 +148,10 @@ dnf5 -y install hyprpaper
 dnf5 -y install nwg-look
 dnf5 -y copr disable lionheartp/Hyprland
 
+dnf5 -y copr enable erikreider/packages
+dnf5 -y install autotiling
+dnf5 -y copr disable erikreider/packages
+
 dnf5 -y copr enable avengemedia/danklinux
 dnf5 -y install dms
 dnf5 -y install quickshell
