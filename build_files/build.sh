@@ -52,7 +52,7 @@ for REPO in $TERRA_REPOS; do
 # Install cachyos kernel
 #dnf5 -y --setopt=tsflags=noscripts install kernel-cachyos kernel-cachyos-devel-matched
 
- dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
+ #dnf5 -y swap ffmpeg ffmpeg-free --allowerasing
 
 #dnf5 -y install mesa-dri-drivers.i686 mesa-va-drivers.i686 mesa-vulkan-drivers.i686 mesa-libEGL.i686 mesa-libGL.i686
 #dnf5 -y upgrade --best 'mesa-*'
