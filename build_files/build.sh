@@ -118,13 +118,14 @@ dnf5 install -y virtualbox-guest-additions
 dnf5 install -y v4l-utils
 dnf5 install -y unzip
 dnf5 install -y docker
-#dnf5 install -y rakuos-welcome-qt
+dnf5 install -y rakuos-welcome-qt
 dnf5 install -y rakuos-software-qt
 #dnf5 install -y greetd
 dnf5 install -y opensc
 dnf5 install -y ccid
 dnf5 install -y terra-release-extras
 dnf5 install -y terra-release-mesa
+dnf5 install -y kitty
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
