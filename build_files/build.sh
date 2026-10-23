@@ -15,6 +15,7 @@ FEDORA_VERSION=$(rpm -E %fedora)
 dnf5 -y install \
 https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_VERSION}.noarch.rpm \
 https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_VERSION}.noarch.rpm
+sudo dnf5 -y install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 
 #dnf5 -y config-manager addrepo --from-repofile=https://negativo17.org/repos/fedora-nvidia.repo
 #rpm --import https://repos.fyralabs.com/terra${FEDORA_VERSION}/key.asc
