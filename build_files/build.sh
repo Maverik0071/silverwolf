@@ -5,12 +5,12 @@ FEDORA_VERSION=$(rpm -E %fedora)
 
 ## Enable repos
 #dnf5 -y install dnf5-plugins
-#dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
+dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
-#dnf5 -y copr enable faugus/faugus-launcher fedora-${FEDORA_VERSION}-x86_64
-#dnf5 -y copr enable ilyaz/LACT fedora-${FEDORA_VERSION}-x86_64
-#dnf5 -y copr enable garecrow/ExtensionManager fedora-${FEDORA_VERSION}-x86_64
+dnf5 -y copr enable faugus/faugus-launcher fedora-${FEDORA_VERSION}-x86_64
+dnf5 -y copr enable ilyaz/LACT fedora-${FEDORA_VERSION}-x86_64
+dnf5 -y copr enable garecrow/ExtensionManager fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable wehagy/protonplus fedora-${FEDORA_VERSION}-x86_64
 dnf5 -y install \
 https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_VERSION}.noarch.rpm \
@@ -119,7 +119,7 @@ dnf5 install -y v4l-utils
 dnf5 install -y unzip
 dnf5 install -y docker
 #dnf5 install -y rakuos-welcome-qt
-#dnf5 install -y rakuos-software-qt
+dnf5 install -y rakuos-software-qt
 #dnf5 install -y greetd
 dnf5 install -y opensc
 dnf5 install -y ccid
