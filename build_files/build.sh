@@ -4,7 +4,7 @@ set -ouex pipefail
 FEDORA_VERSION=$(rpm -E %fedora)
 
 ## Enable repos
-#dnf5 -y install dnf5-plugins
+dnf5 -y install dnf5-plugins
 dnf5 -y copr enable tohur/RakuOS fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos fedora-${FEDORA_VERSION}-x86_64
 #dnf5 -y copr enable bieszczaders/kernel-cachyos-addons fedora-${FEDORA_VERSION}-x86_64
@@ -123,6 +123,8 @@ dnf5 install -y rakuos-software-qt
 #dnf5 install -y greetd
 dnf5 install -y opensc
 dnf5 install -y ccid
+dnf5 install -y terra-release-extras
+dnf5 install -y terra-release-mesa
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
