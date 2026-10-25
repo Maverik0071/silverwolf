@@ -126,6 +126,7 @@ dnf5 install -y ccid
 dnf5 install -y terra-release-extras
 dnf5 install -y terra-release-mesa
 dnf5 install -y kitty
+dnf5 install -y upower
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -189,6 +190,7 @@ dnf5 -y copr disable bytehackr/Security-Tools
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
 systemctl enable pcscd.socket
+systemctl enable upower.socket
 # systemctl enable dms
 #systemctl enable greetd
 #systemctl start greetd
