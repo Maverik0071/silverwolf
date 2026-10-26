@@ -77,6 +77,7 @@ dnf5 install -y git
 dnf5 install -y grim
 dnf5 install -y grimshot
 dnf5 install -y jetbrains-mono-fonts-all
+dnf5 install -y hack-nerd-fonts
 dnf5 install -y jgmenu
 dnf5 install -y jgmenu-gtktheme
 dnf5 install -y jgmenu-pmenu
@@ -127,6 +128,8 @@ dnf5 install -y terra-release-extras
 dnf5 install -y terra-release-mesa
 dnf5 install -y kitty
 dnf5 install -y upower
+dnf5 install -y ghc-hackage-security
+
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
