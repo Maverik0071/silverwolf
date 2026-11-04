@@ -129,7 +129,8 @@ dnf5 install -y terra-release-mesa
 dnf5 install -y kitty
 dnf5 install -y upower
 dnf5 install -y ghc-hackage-security
-
+dnf5 install -y wlogout
+dnf5 install -y lxappearance
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
