@@ -131,6 +131,7 @@ dnf5 install -y upower
 dnf5 install -y ghc-hackage-security
 dnf5 install -y wlogout
 dnf5 install -y lxappearance
+dnf5 install -y python3
 
 # enable flathub
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
