@@ -6,7 +6,7 @@ COPY build_files /
 #FROM ghcr.io/wayblueorg/hyprland:latest
 # FROM ghcr.io/rakuos/rakuos-base:latest
 #FROM quay.io/rakuos/rakuos-niri:latest
-FROM quay.io/fedora-ostree-desktops/sway-atomic:45
+# FROM quay.io/fedora-ostree-desktops/sway-atomic:45
 #FROM ghcr.io/ublue-os/bluefin:latest
 
 
@@ -16,7 +16,7 @@ FROM quay.io/fedora-ostree-desktops/sway-atomic:45
 #FROM ghcr.io/rakuos/rakuos-gnome:latest
 # FROM ghcr.io/rakuos/rakuos-base:latest
 #FROM ghcr.io/wayblueorg/hyprland:latest
-#FROM ghcr.io/wayblueorg/hyprland:44
+FROM ghcr.io/wayblueorg/sway:latest
 # Or your specific desired starting base tag
 
 
